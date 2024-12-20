@@ -1,5 +1,6 @@
 package com.gamja.learn_jpa_and_hibernate.course.jdbc;
 
+import com.gamja.learn_jpa_and_hibernate.course.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,10 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {//Command
 
     @Override
     public void run(String... args) throws Exception {
-        courseJdbcRepository.insert();///스프링 시작과 동시에 insert() 메서드를 실행해서 h2 데이터베이스에 쿼리를 실행한다.
+        courseJdbcRepository.insert(new Course(1, "LearnAWS", "dongwoo"));//이렇게 sql쿼리 문에 인자를 삽입할 수 있다.
+        courseJdbcRepository.insert(new Course(2, "LearnMachineLearning", "dongwoo"));//이렇게 sql쿼리 문에 인자를 삽입할 수 있다.
+        courseJdbcRepository.insert(new Course(3, "LearnAzure", "dongwoo"));//이렇게 sql쿼리 문에 인자를 삽입할 수 있다.
+
+        courseJdbcRepository.delete(3);//id가 3인 튜플을 삭제
     }
 }
