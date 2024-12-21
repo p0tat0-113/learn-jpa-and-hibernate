@@ -39,7 +39,7 @@ public class CourseJdbcRepository {
     }
 
     //이번에는 삭제하는 쿼리를 날리는 메서드를 작성해본다.
-    public void delete(int id) {
+    public void deleteById(int id) {
         springJdbcTemplate.update(DELETE_QUERY, id);
     }
 

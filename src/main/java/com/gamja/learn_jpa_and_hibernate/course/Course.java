@@ -1,11 +1,23 @@
 package com.gamja.learn_jpa_and_hibernate.course;
 
-public class Course {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+//이번에는 JPA를 이용해본다. 빈과 테이블을 직접 매핑함.
+@Entity
+public class Course {//같은 이름의 테이블 course와 매핑된다.
+
+    @Id
     private long id;
+
+    //현재 필드이름과 테이블의 column이름이 같기 때문에 @Column(name = "name") 이 부분은 그냥 빼버려도 된다.
+    @Column(name = "name")
     private String name;
+    @Column(name = "author")
     private String author;
 
-    public Course() {//BeanPropertyRowMapper에 의해 자동으로 매핑되기 위해서는 기본생성자와 setter메서드를 가지고 있어야 한다.
+    public Course() {
     }
 
     public Course(long id, String name, String author) {
