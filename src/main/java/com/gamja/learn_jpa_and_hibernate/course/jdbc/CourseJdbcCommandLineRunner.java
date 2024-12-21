@@ -18,5 +18,8 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {//Command
         courseJdbcRepository.insert(new Course(3, "LearnAzure", "dongwoo"));//이렇게 sql쿼리 문에 인자를 삽입할 수 있다.
 
         courseJdbcRepository.delete(3);//id가 3인 튜플을 삭제
+
+        System.out.println(courseJdbcRepository.findById(1));//id값이 1,2인 튜플을 조회
+        System.out.println(courseJdbcRepository.findById(2));
     }
 }
