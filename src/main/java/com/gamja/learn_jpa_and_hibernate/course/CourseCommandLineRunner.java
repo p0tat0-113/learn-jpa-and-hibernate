@@ -29,5 +29,12 @@ public class CourseCommandLineRunner implements CommandLineRunner {//CommandLine
 
         System.out.println(repository.findById(1l));//id값이 1,2인 튜플을 조회
         System.out.println(repository.findById(2l));
+
+        System.out.println(repository.findAll());//select *
+        System.out.println(repository.count());//select count(*)
+
+        //커스텀 메서드 사용
+        System.out.println(repository.findByAuthor("dongwoo"));
+        System.out.println(repository.findByName("LearnAWS"));
     }
 }
